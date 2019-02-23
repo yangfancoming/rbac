@@ -136,7 +136,7 @@
 	    $breadcrumb.html("").append(breadcrumnHtml);
 	    var $name = $this.attr("name");
 
-	    // $name = role menu dept .......
+	    // $name = role menu dept user .......
 	    $.post(ctx + $name, {}, function(r) {
 	        if (r.indexOf('账户登录') != -1) {
 	            location = location;
