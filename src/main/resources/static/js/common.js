@@ -57,7 +57,6 @@ var $MB = (function() {
             checkboxes: true,
             expandAll: setting.expandAll ? true : setting.expandAll, // 是否全部展开
             columns: setting.columns
-
         });
     }
 
@@ -67,31 +66,18 @@ var $MB = (function() {
     function _notify(message, type) {
         $.notify({
             icon: "fa fa-check",
-            title: "",
-            message: message,
-            url: ''
-        }, {
-            element: 'body',
-            type: type,
+            title: "", message: message, url: ''},{
+            element: 'body',type: type,
             allow_dismiss: true,
-            placement: {
-                from: "top",
-                align: "center"
-            },
-            offset: {
-                x: 20,
-                y: 20
-            },
+            placement: { from: "top",align: "center" },
+            offset: { x: 20,y: 20},
             spacing: 10,
             z_index: 3001,
             delay: 2500,
             timer: 1000,
             url_target: '_blank',
             mouse_over: false,
-            animate: {
-                enter: "animated fadeInDown",
-                exit: "animated fadeOutUp"
-            },
+            animate: {  enter: "animated fadeInDown",exit: "animated fadeOutUp"},
             template: '<div data-notify="container" class="alert alert-dismissible alert-{0} alert--notify" role="alert">' +
                 '<span data-notify="icon"></span> ' +
                 '<span data-notify="title">{1}</span> ' +
@@ -121,38 +107,17 @@ var $MB = (function() {
     function _getThemeColor(theme) {
         var color;
         switch (theme) {
-            case 'green':
-                color = '#32c787';
-                break;
-            case 'blue':
-                color = '#2196F3';
-                break;
-            case 'red':
-                color = '#ff5652';
-                break;
-            case 'orange':
-                color = '#FF9800';
-                break;
-            case 'teal':
-                color = '#39bbb0';
-                break;
-            case 'cyan':
-                color = '#00BCD4';
-                break;
-            case 'blue-grey':
-                color = '#607D8B';
-                break;
-            case 'purple':
-                color = '#d559ea';
-                break;
-            case 'indigo':
-                color = '#3F51B5';
-                break;
-            case 'lime':
-                color = '#CDDC39';
-                break;
-            default:
-                color = '#32c787';
+            case 'green':color = '#32c787'; break;
+            case 'blue': color = '#2196F3';break;
+            case 'red': color = '#ff5652';break;
+            case 'orange':color = '#FF9800';break;
+            case 'teal':color = '#39bbb0'; break;
+            case 'cyan':color = '#00BCD4';break;
+            case 'blue-grey':color = '#607D8B';break;
+            case 'purple':color = '#d559ea';break;
+            case 'indigo':color = '#3F51B5';break;
+            case 'lime':color = '#CDDC39';break;
+            default: color = '#32c787';
         }
         return color;
     }
@@ -161,38 +126,17 @@ var $MB = (function() {
     function _getThemeRGBA(theme,opacity) {
         var color;
         switch (theme) {
-            case 'green':
-                color = 'rgba(50,199,135,'+opacity+')';
-                break;
-            case 'blue':
-                color = 'rgba(33,150,243,'+opacity+')';
-                break;
-            case 'red':
-                color = 'rgba(255,86,82,'+opacity+')';
-                break;
-            case 'orange':
-                color = 'rgba(255,152,0,'+opacity+')';
-                break;
-            case 'teal':
-                color = 'rgba(57,187,176,'+opacity+')';
-                break;
-            case 'cyan':
-                color = 'rgba(0,188,212,'+opacity+')';
-                break;
-            case 'blue-grey':
-                color = 'rgba(96,125,139,'+opacity+')';
-                break;
-            case 'purple':
-                color = 'rgba(213,89,234,'+opacity+')';
-                break;
-            case 'indigo':
-                color = 'rgba(63,81,181,'+opacity+')';
-                break;
-            case 'lime':
-                color = 'rgba(205,220,57,'+opacity+')';
-                break;
-            default:
-                color = 'rgba(50,199,135,'+opacity+')';
+            case 'green': color = 'rgba(50,199,135,'+opacity+')'; break;
+            case 'blue':color = 'rgba(33,150,243,'+opacity+')';break;
+            case 'red':color = 'rgba(255,86,82,'+opacity+')'; break;
+            case 'orange':color = 'rgba(255,152,0,'+opacity+')';break;
+            case 'teal':color = 'rgba(57,187,176,'+opacity+')';break;
+            case 'cyan':color = 'rgba(0,188,212,'+opacity+')'; break;
+            case 'blue-grey':color = 'rgba(96,125,139,'+opacity+')';break;
+            case 'purple':color = 'rgba(213,89,234,'+opacity+')';break;
+            case 'indigo':color = 'rgba(63,81,181,'+opacity+')';break;
+            case 'lime':color = 'rgba(205,220,57,'+opacity+')';break;
+            default: color = 'rgba(50,199,135,'+opacity+')';
         }
         return color;
     }
@@ -263,29 +207,8 @@ var $MB = (function() {
                 "fromLabel": "From",
                 "toLabel": "To",
                 "customRangeLabel": "Custom",
-                "daysOfWeek": [
-                    "日",
-                    "一",
-                    "二",
-                    "三",
-                    "四",
-                    "五",
-                    "六"
-                ],
-                "monthNames": [
-                    "一月",
-                     "二月",
-                     "三月",
-                     "四月",
-                     "五月",
-                     "六月",
-                     "七月",
-                     "八月",
-                     "九月",
-                     "十月",
-                     "十一月",
-                     "十二月"
-                ],
+                "daysOfWeek": [ "日","一","二","三","四","五","六"],
+                "monthNames": ["一月","二月","三月", "四月","五月", "六月","七月", "八月","九月","十月","十一月","十二月" ],
                 "firstDay": 1
             }
         }, function(start,end, label) {
@@ -313,47 +236,20 @@ var $MB = (function() {
             var pageNumber = $('#' + id).bootstrapTable('getOptions').pageNumber;
             return pageSize * (pageNumber - 1) + index + 1;
         },
-        refreshTable: function(id) {
-            $('#' + id).bootstrapTable('refresh');
-        },
-        n_default: function(message) {
-            _notify(message, "inverse");
-        },
-        n_info: function(message) {
-            _notify(message, "info");
-        },
-        n_success: function(message) {
-            _notify(message, "success");
-        },
-        n_warning: function(message) {
-            _notify(message, "warning");
-        },
-        n_danger: function(message) {
-            _notify(message, "danger");
-        },
-        closeModal: function(modalId) {
-            _closeModal(modalId);
-        },
-        closeAndRestModal: function(modalId) {
-            _closeAndRestModal(modalId);
-        },
-        getThemeColor: function(theme) {
-            return _getThemeColor(theme);
-        },
-        getThemeRGBA: function(theme,opacity){
-        	return _getThemeRGBA(theme,opacity);
-        },
-        confirm: function(settings, callback) {
-            _confirm(settings, callback);
-        },
-        resetJsTree: function(id) {
-            _resetJsTree(id);
-        },
-        refreshJsTree: function(id, fn) {
-            _refreshJsTree(id, fn);
-        },
-        calenders: function(eles,dobubble,secondNot){
-            _calenders(eles,dobubble,secondNot);
+        refreshTable: function(id) {  $('#' + id).bootstrapTable('refresh');},
+        n_default: function(message) {  _notify(message, "inverse");},
+        n_info: function(message) { _notify(message, "info");},
+        n_success: function(message) {  _notify(message, "success");},
+        n_warning: function(message) {  _notify(message, "warning");},
+        n_danger: function(message) { _notify(message, "danger"); },
+        closeModal: function(modalId) {  _closeModal(modalId); },
+        closeAndRestModal: function(modalId) {  _closeAndRestModal(modalId); },
+        getThemeColor: function(theme) { return _getThemeColor(theme); },
+        getThemeRGBA: function(theme,opacity){ return _getThemeRGBA(theme,opacity); },
+        confirm: function(settings, callback) {  _confirm(settings, callback); },
+        resetJsTree: function(id) { _resetJsTree(id); },
+        refreshJsTree: function(id, fn) {  _refreshJsTree(id, fn); },
+        calenders: function(eles,dobubble,secondNot){ _calenders(eles,dobubble,secondNot);
         }
     }
 })($);
